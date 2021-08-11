@@ -5,7 +5,7 @@ const nicno = document.getElementById('NICno')
 const type = document.getElementById('type')
 
 form.addEventListener('submit', (e) => {
-    // add errors to messages for NIC number input
+    // add errors to messages[] for NIC number input
     let messages = []
     if (nic.value === '' || nic.value == null) {
         messages.push('NIC number is required')
@@ -27,10 +27,14 @@ form.addEventListener('submit', (e) => {
             nicno.innerHTML = nic.value + " has a invalid last character"
         }
     } else {
-        // This should be chaged with last charater
-        // because when some one put 11 numbers with a letter then nic.value.length === 12 , but this is not a valid NIC
-        // so change this code with last character 
-        // add comments to understand the code 
+        nicno.innerHTML = nic.value + " is not a valid NIC number"
+    }
+
+    // identify new valid NIC 
+    if (nic.value.length === 12) {
+        nicno.innerHTML = "Your NIC number is: " + nic.value
+        type.innerHTML = "This is a new NIC"            
+    } else {
         nicno.innerHTML = nic.value + " is not a valid NIC number"
     }
 
