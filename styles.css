@@ -8,7 +8,8 @@ h1 {
 }
 #error {
   text-align: center;
-  color: blanchedalmond;
+  color: rgb(235, 38, 55);
+  font-size: 20px;
   margin-top: 20px;
 }
 #form {
@@ -33,16 +34,20 @@ h1 {
 #type {
   text-align: center;
   color: blanchedalmond;
+  margin-top: 5px;
 }
 #DOB {
   text-align: center;
   color: blanchedalmond;
+  margin-top: 5px;
 }
 #age {
   text-align: center;
   color: blanchedalmond;
+  margin-top: 5px;
 }
 #gender {
   text-align: center;
   color: blanchedalmond;
+  margin-top: 5px;
 }
