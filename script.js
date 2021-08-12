@@ -3,9 +3,12 @@ const form = document.getElementById('form')
 const errorElement = document.getElementById('error')
 const nicno = document.getElementById('NICno')
 const type = document.getElementById('type')
+const dob = document.getElementById('DOB')
+const age = document.getElementById('age')
+const gender = document.getElementById('gender')
 
 form.addEventListener('submit', (e) => {
-    // add errors to messages[] for NIC number input
+    // add errors to messages array[] for user inputs of NIC number
     let messages = []
     if (nic.value === '' || nic.value == null) {
         messages.push('NIC number is required')
@@ -17,23 +20,72 @@ form.addEventListener('submit', (e) => {
 
     // identify old valid NIC 
     if (nic.value.length === 10) {
+        // last character should be v or x
+        // but user could type simple v or x also same time capital X or V
         if (nic.value.substring( nic.value.length - 1) == 'v' || 
             nic.value.substring( nic.value.length - 1) == 'x' ||
             nic.value.substring( nic.value.length - 1) == 'V' ||
             nic.value.substring( nic.value.length - 1) == 'X' ) {
-            nicno.innerHTML = "Your NIC number is: " + nic.value
-            type.innerHTML = "This is an old NIC"            
+                // find the gender and dob months and dates 
+                // (if 3+4+5 numbers are < 366 --> male)
+                if (nic.value.substring(2, 3) <= '366') {
+                    nicno.innerHTML = "Your NIC number is: " + nic.value
+                    type.innerHTML = "This is an old NIC"
+                    // find out days converting to months and dates
+                    dob.innerHTML = "Date of Birth: " + nic.value.substring(0, 2) + "/" 
+                    age.innerHTML = "Age: "
+                    gender.innerHTML = "Gender: Male" 
+                }
+                // (if 366 < 3+4+5 numbers are < 500 --> not a valid NIC)
+                else if ('366' < nic.value.substring(2, 3) && nic.value.substring(2, 3) < '500') {
+                    nicno.innerHTML = nic.value + " is not a valid NIC number"
+                }
+                // (if 500 <= 3+4+5 numbers are <= 866 --> female)
+                else if ('500' <= nic.value.substring(2, 3) && nic.value.substring(2, 3) <= '866') {
+                    nicno.innerHTML = "Your NIC number is: " + nic.value
+                    type.innerHTML = "This is an old NIC"
+                    // find out days converting to months and dates
+                    dob.innerHTML = "Date of Birth: " + nic.value.substring(0, 2) + "/" 
+                    age.innerHTML = "Age: "
+                    gender.innerHTML = "Gender: Female" 
+                }
+                // (if 866 < 3+4+5 numbers are < 999 --> female)
+                else if ('866' < nic.value.substring(2, 3) && nic.value.substring(2, 3) < '999') {
+                    nicno.innerHTML = nic.value + " is not a valid NIC number"
+                }
         } else {
             nicno.innerHTML = nic.value + " has a invalid last character"
         }
-    } else {
-        nicno.innerHTML = nic.value + " is not a valid NIC number"
-    }
-
+    } 
     // identify new valid NIC 
-    if (nic.value.length === 12) {
-        nicno.innerHTML = "Your NIC number is: " + nic.value
-        type.innerHTML = "This is a new NIC"            
+    else if (nic.value.length === 12) {
+        // find the gender and dob months and dates 
+        // (if 3+4+5 numbers are < 366 --> male)
+        if (nic.value.substring(4, 3) <= 366) {
+            nicno.innerHTML = "Your NIC number is: " + nic.value
+            type.innerHTML = "This is a new NIC"
+            // find out days converting to months and dates
+            dob.innerHTML = "Date of Birth: " + nic.value.substring(0, 4) + "/" 
+            age.innerHTML = "Age: "
+            gender.innerHTML = "Gender: Male" 
+        }
+        // (if 366 < 3+4+5 numbers are < 500 --> not a valid NIC)
+        else if (366 < nic.value.substring(4, 3) < 500) {
+            nicno.innerHTML = nic.value + " is not a valid NIC number"
+        }
+        // (if 500 <= 3+4+5 numbers are <= 866 --> female)
+        else if (500 <= nic.value.substring(4, 3) <= 866) {
+            nicno.innerHTML = "Your NIC number is: " + nic.value
+            type.innerHTML = "This is a new NIC"
+            // find out days converting to months and dates
+            dob.innerHTML = "Date of Birth: " + nic.value.substring(0, 4) + "/" 
+            age.innerHTML = "Age: "
+            gender.innerHTML = "Gender: Female" 
+        }
+        // (if 866 < 3+4+5 numbers are < 999 --> female)
+        else if (866 < nic.value.substring(4, 3) < 999) {
+            nicno.innerHTML = nic.value + " is not a valid NIC number"
+        }            
     } else {
         nicno.innerHTML = nic.value + " is not a valid NIC number"
     }
