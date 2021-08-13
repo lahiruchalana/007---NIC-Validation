@@ -36,7 +36,8 @@ form.addEventListener('submit', (e) => {
                     type.innerHTML = "This is an old NIC"
                     age.innerHTML = "Age: " + (2021 - (19 + nic.value.substring(0, 2)))
                     gender.innerHTML = "Gender: Male" 
-                    if ((nic.value.substring(0, 2) % 4) === 0) {
+                    // if it is a leap year or not it does not matter. leap year and non leap year both can use this code.
+                    if ((nic.value.substring(0, 2) % 4) === 0 || (nic.value.substring(0, 2) % 4) === 1 || (nic.value.substring(0, 2) % 4) === 2 || (nic.value.substring(0, 2) % 4) === 3) {
                         if (nic.value.substr(2, 3) <= 31) {
                             dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/January/" + nic.value.substr(2, 3)
                         } else if (nic.value.substr(2, 3) <= 60) {
@@ -62,33 +63,7 @@ form.addEventListener('submit', (e) => {
                         } else if (nic.value.substr(2, 3) <= 366) {
                             dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/December/" + (nic.value.substr(2, 3) - 335)
                         }
-                    } else {
-                        if (nic.value.substr(2, 3) <= 31) {
-                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/January/" + nic.value.substr(2, 3)
-                        } else if (nic.value.substr(2, 3) <= 60) {
-                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/February/" + (nic.value.substr(2, 3) - 31)
-                        } else if (nic.value.substr(2, 3) <= 91) {
-                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/March/" + (nic.value.substr(2, 3) - 60)
-                        } else if (nic.value.substr(2, 3) <= 121) {
-                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/April/" + (nic.value.substr(2, 3) - 91)
-                        } else if (nic.value.substr(2, 3) <= 152) {
-                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/May/" + (nic.value.substr(2, 3) - 121)
-                        } else if (nic.value.substr(2, 3) <= 182) {
-                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/June/" + (nic.value.substr(2, 3) - 152)
-                        } else if (nic.value.substr(2, 3) <= 213) {
-                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/July/" + (nic.value.substr(2, 3) - 182)
-                        } else if (nic.value.substr(2, 3) <= 244) {
-                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/August/" + (nic.value.substr(2, 3) - 213)
-                        } else if (nic.value.substr(2, 3) <= 274) {
-                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/September/" + (nic.value.substr(2, 3) - 244)
-                        } else if (nic.value.substr(2, 3) <= 305) {
-                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/Octomber/" + (nic.value.substr(2, 3) - 274)
-                        } else if (nic.value.substr(2, 3) <= 335) {
-                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/November/" + (nic.value.substr(2, 3) - 305)
-                        } else if (nic.value.substr(2, 3) <= 366) {
-                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/December/" + (nic.value.substr(2, 3) - 335)
-                        }
-                    }
+                    } 
                 }
                 // (if 366 < 3+4+5 numbers are < 500 --> not a valid NIC)
                 else if ('366' < nic.value.substring(2, 3) && nic.value.substring(2, 3) < '500') {
@@ -98,9 +73,36 @@ form.addEventListener('submit', (e) => {
                 else if ('500' <= nic.value.substring(2, 3) && nic.value.substring(2, 3) <= '866') {
                     nicno.innerHTML = "Your NIC number is: " + nic.value
                     type.innerHTML = "This is an old NIC"
-                    dob.innerHTML = "Date of Birth: " + nic.value.substring(0, 2) + "/" 
                     age.innerHTML = "Age: " + (2021 - (19 + nic.value.substring(0, 2)))
                     gender.innerHTML = "Gender: Female" 
+                    // if it is a leap year or not it does not matter. leap year and non leap year both can use this code.
+                    if ((nic.value.substring(0, 2) % 4) === 0 || (nic.value.substring(0, 2) % 4) === 1 || (nic.value.substring(0, 2) % 4) === 2 || (nic.value.substring(0, 2) % 4) === 3) {
+                        if ((nic.value.substr(2, 3) - 500) <= 31) {
+                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/January/" + (nic.value.substr(4, 3) - 500)
+                        } else if ((nic.value.substr(2, 3) - 500) <= 60) {
+                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/February/" + ((nic.value.substr(4, 3) - 500) - 31)
+                        } else if ((nic.value.substr(2, 3) - 500) <= 91) {
+                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/March/" + ((nic.value.substr(4, 3) - 500) - 60)
+                        } else if ((nic.value.substr(2, 3) - 500) <= 121) {
+                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/April/" + ((nic.value.substr(4, 3) - 500) - 91)
+                        } else if ((nic.value.substr(2, 3) - 500) <= 152) {
+                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/May/" + ((nic.value.substr(4, 3) - 500) - 121)
+                        } else if ((nic.value.substr(2, 3) - 500) <= 182) {
+                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/June/" + ((nic.value.substr(4, 3) - 500) - 152)
+                        } else if ((nic.value.substr(2, 3) - 500) <= 213) {
+                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/July/" + ((nic.value.substr(4, 3) - 500) - 182)
+                        } else if ((nic.value.substr(2, 3) - 500) <= 244) {
+                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/August/" + ((nic.value.substr(4, 3) - 500) - 213)
+                        } else if ((nic.value.substr(2, 3) - 500) <= 274) {
+                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/September/" + ((nic.value.substr(4, 3) - 500) - 244)
+                        } else if ((nic.value.substr(2, 3) - 500) <= 305) {
+                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/Octomber/" + ((nic.value.substr(4, 3) - 500) - 274)
+                        } else if ((nic.value.substr(2, 3) - 500) <= 335) {
+                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/November/" + ((nic.value.substr(4, 3) - 500) - 305)
+                        } else if ((nic.value.substr(2, 3) - 500) <= 366) {
+                            dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 2) + "/December/" + ((nic.value.substr(4, 3) - 500) - 335)
+                        }
+                    }
                 }
                 // (if 866 < 3+4+5 numbers are < 999 --> female)
                 else if ('866' < nic.value.substring(2, 3) && nic.value.substring(2, 3) < '999') {
@@ -120,9 +122,36 @@ form.addEventListener('submit', (e) => {
         else if (nic.value.substr(4, 3) <= '366') {
             nicno.innerHTML = "Your NIC number is: " + nic.value
             type.innerHTML = "This is a new NIC"
-            dob.innerHTML = "Date of Birth: " + nic.value.substring(0, 4) + "/" 
             age.innerHTML = "Age: " + (2021 - nic.value.substring(0, 4))
             gender.innerHTML = "Gender: Male" 
+             // if it is a leap year or not it does not matter. leap year and non leap year both can use this code.
+             if ((nic.value.substring(0, 4) % 4) === 0 || (nic.value.substring(0, 4) % 4) === 1 || (nic.value.substring(0, 4) % 4) === 2 || (nic.value.substring(0, 4) % 4) === 3) {
+                if (nic.value.substr(4, 3) <= 31) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/January/" + nic.value.substr(4, 3)
+                } else if (nic.value.substr(4, 3) <= 60) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/February/" + (nic.value.substr(4, 3) - 31)
+                } else if (nic.value.substr(4, 3) <= 91) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/March/" + (nic.value.substr(4, 3) - 60)
+                } else if (nic.value.substr(4, 3) <= 121) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/April/" + (nic.value.substr(4, 3) - 91)
+                } else if (nic.value.substr(4, 3) <= 152) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/May/" + (nic.value.substr(4, 3) - 121)
+                } else if (nic.value.substr(4, 3) <= 182) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/June/" + (nic.value.substr(4, 3) - 152)
+                } else if (nic.value.substr(4, 3) <= 213) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/July/" + (nic.value.substr(4, 3) - 182)
+                } else if (nic.value.substr(4, 3) <= 244) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/August/" + (nic.value.substr(4, 3) - 213)
+                } else if (nic.value.substr(4, 3) <= 274) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/September/" + (nic.value.substr(4, 3) - 244)
+                } else if (nic.value.substr(4, 3) <= 305) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/Octomber/" + (nic.value.substr(4, 3) - 274)
+                } else if (nic.value.substr(4, 3) <= 335) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/November/" + (nic.value.substr(4, 3) - 305)
+                } else if (nic.value.substr(4, 3) <= 366) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/December/" + (nic.value.substr(4, 3) - 335)
+                }
+            } 
         }
         // (if 366 < 3+4+5 numbers are < 500 --> not a valid NIC)
         else if ('366' < nic.value.substr(4, 3) && nic.value.substr(4, 3) < '500') {
@@ -132,9 +161,36 @@ form.addEventListener('submit', (e) => {
         else if ('500' <= nic.value.substr(4, 3) && nic.value.substr(4, 3) <= '866') {
             nicno.innerHTML = "Your NIC number is: " + nic.value
             type.innerHTML = "This is a new NIC"
-            dob.innerHTML = "Date of Birth: " + nic.value.substring(0, 4) + "/" 
             age.innerHTML = "Age: " + (2021 - nic.value.substring(0, 4))
             gender.innerHTML = "Gender: Female" 
+            // if it is a leap year or not it does not matter. leap year and non leap year both can use this code.
+            if ((nic.value.substring(0, 4) % 4) === 0 || (nic.value.substring(0, 4) % 4) === 1 || (nic.value.substring(0, 4) % 4) === 2 || (nic.value.substring(0, 4) % 4) === 3) {
+                if ((nic.value.substr(4, 3) - 500) <= 31) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/January/" + (nic.value.substr(4, 3) - 500)
+                } else if ((nic.value.substr(4, 3) - 500) <= 60) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/February/" + ((nic.value.substr(4, 3) - 500) - 31)
+                } else if ((nic.value.substr(4, 3) - 500) <= 91) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/March/" + ((nic.value.substr(4, 3) - 500) - 60)
+                } else if ((nic.value.substr(4, 3) - 500) <= 121) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/April/" + ((nic.value.substr(4, 3) - 500) - 91)
+                } else if ((nic.value.substr(4, 3) - 500) <= 152) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/May/" + ((nic.value.substr(4, 3) - 500) - 121)
+                } else if ((nic.value.substr(4, 3) - 500) <= 182) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/June/" + ((nic.value.substr(4, 3) - 500) - 152)
+                } else if ((nic.value.substr(4, 3) - 500) <= 213) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/July/" + ((nic.value.substr(4, 3) - 500) - 182)
+                } else if ((nic.value.substr(4, 3) - 500) <= 244) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/August/" + ((nic.value.substr(4, 3) - 500) - 213)
+                } else if ((nic.value.substr(4, 3) - 500) <= 274) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/September/" + ((nic.value.substr(4, 3) - 500) - 244)
+                } else if ((nic.value.substr(4, 3) - 500) <= 305) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/Octomber/" + ((nic.value.substr(4, 3) - 500) - 274)
+                } else if ((nic.value.substr(4, 3) - 500) <= 335) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/November/" + ((nic.value.substr(4, 3) - 500) - 305)
+                } else if ((nic.value.substr(4, 3) - 500) <= 366) {
+                    dob.innerHTML = "Date of Birth: " + nic.value.substr(0, 4) + "/December/" + ((nic.value.substr(4, 3) - 500) - 335)
+                }
+            }
         }
         // (if 866 < 3+4+5 numbers are < 999 --> female)
         else if ('866' < nic.value.substr(4, 3) && nic.value.substr(4, 3) < '999') {
