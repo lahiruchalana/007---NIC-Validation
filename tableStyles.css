@@ -1,0 +1,20 @@
+body {
+  background-color: rgb(161, 144, 144);
+}
+
+#frame {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 30px;
+}
+
+th {
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+#home {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}

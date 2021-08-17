@@ -7,15 +7,21 @@
     <title>NIC_Validation</title>
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <h1>NIC Validation</h1>
+    <h1 class="h1" style="margin-top: 50px;">NIC Validation</h1>
+    <input type="button" class="btn btn-outline-success" onClick="location.href='table.html'"
+        value='Find Users By NIC' style="margin-top: -80px; margin-left: 80%;"> 
     <form id="form" action="/" method="GET">
         <div>
-            <label id="label" for="NIC">NIC</label>
-            <input id="NIC" name="NIC" type="string">
+            <div style="max-width: 400px; margin-left: auto; margin-right: auto;" class="input-group mb-3">
+                <input id="NIC" name="NIC" type="string" class="form-control" placeholder="Enter NIC Number" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button style="margin-top: -0px;" class="btn btn-outline-secondary" id="button" type="submit">Show NIC Info</button>
+                </div>
+            </div>
         </div>
-        <button id="button" type="submit">Show</button>
     </form>
     <div id="frame">
         <div id="error"></div>
@@ -23,7 +29,7 @@
         <div id="type"></div>
         <div id="DOB"></div>
         <div id="age"></div>
-        <div id="gender"></div>
+        <div id="gender"></div>   
     </div>
 </body>
 </html>

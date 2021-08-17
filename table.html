@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NIC_Validation | Search Users</title>
+        <script defer src="tableScript.js"></script>
+        <link rel="stylesheet" href="tableStyles.css">
+        <!-- something clarify -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div id="frame">
+        <div class="row">
+            <h1 style="margin-top: 10px; margin-right: 30px;" >Search Users</h1>
+            <div class="col" style="margin-bottom: 20px;">
+                <div class="card card-body">
+                    <input id="search-input-old" class="form-control" type="string" placeholder="Enter User Old NIC">
+                </div>
+            </div>
+            <div class="col" style="margin-bottom: 20px;">
+                <div class="card card-body">
+                    <input id="search-input-new" class="form-control" type="string" placeholder="Enter User New NIC">
+                </div>
+            </div>
+            <div class="col" style="margin-bottom: 20px;">
+                <div class="card card-body">
+                    <input id="search-input" class="form-control" type="text" placeholder="Enter User Name">
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <tr  class="bg-info">
+                <th  class="bg-info" data-colname="name" data-order="desc">Name &#9650</th>
+                <th  data-colname="age" data-order="desc">OldNIC &#9650</th>
+                <th  data-colname="age" data-order="desc">NewNIC &#9650</th>
+                <th  data-colname="age" data-order="desc">Age &#9650</th>
+                <th  data-colname="birthdate" data-order="desc">Birthday &#9650</th>
+            </tr>
+            <tbody id="myTable">
+                
+            </tbody>
+        </table>
+        <input type="button" class="btn btn-outline-secondary" id="home" onClick="location.href='index.html'"
+        value='Home'> 
+    </div>
+</body>
+</html>

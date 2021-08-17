@@ -1,20 +1,22 @@
 body {
-  background-color: rgb(85, 81, 81);
+  margin-top: 50px;
+  background-color: rgb(48, 46, 46);
 }
 h1 {
   text-align: center;
-  color: blanchedalmond;
+  font-size: 40px;
+  color: rgb(48, 46, 46);
   margin-top: 50px;
 }
 #error {
   text-align: center;
-  color: rgb(235, 38, 55);
+  color: rgb(177, 9, 23);
   font-size: 20px;
   margin-top: 20px;
 }
 #form {
   text-align: center;
-  color: blanchedalmond;
+  color: rgb(196, 192, 192);
   margin-top: 20px;
 }
 #button {
@@ -22,32 +24,33 @@ h1 {
 }
 #label {
   margin-right: 10px;
+  color: rgb(48, 46, 46);
 }
 #frame {
   align-items: center;
 }
 #NICno {
   text-align: center;
-  color: blanchedalmond;
+  color: rgb(48, 46, 46);
   margin-top: 20px;
 }
 #type {
   text-align: center;
-  color: blanchedalmond;
+  color: rgb(48, 46, 46);
   margin-top: 5px;
 }
 #DOB {
   text-align: center;
-  color: blanchedalmond;
+  color: rgb(48, 46, 46);
   margin-top: 5px;
 }
 #age {
   text-align: center;
-  color: blanchedalmond;
+  color: rgb(48, 46, 46);
   margin-top: 5px;
 }
 #gender {
   text-align: center;
-  color: blanchedalmond;
+  color: rgb(48, 46, 46);
   margin-top: 5px;
 }
