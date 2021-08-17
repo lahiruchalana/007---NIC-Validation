@@ -8,8 +8,10 @@ const age = document.getElementById('age')
 const gender = document.getElementById('gender')
 
 form.addEventListener('submit', (e) => {
-    // add errors to messages array[] for user inputs of NIC number
+
+    var currentYear = 2021
     let messages = []
+
     if (nic.value === '' || nic.value == null) {
         messages.push('NIC number is required')
     }
@@ -20,8 +22,6 @@ form.addEventListener('submit', (e) => {
 
     // identify old valid NIC 
     if (nic.value.length === 10) {
-        // last character should be v or x
-        // but user could type simple v or x also same time capital X or V
         if (nic.value.substring( nic.value.length - 1) == 'v' || 
             nic.value.substring( nic.value.length - 1) == 'x' ||
             nic.value.substring( nic.value.length - 1) == 'V' ||
@@ -32,31 +32,27 @@ form.addEventListener('submit', (e) => {
 
                 // find the gender and dob months and dates 
                 if (dobDays === '000') {
-                    nicno.innerHTML = nic.value + " is not a valid NIC number"
+                    nicno.innerHTML = "Not a valid NIC number"
                 } 
-                // (if 3+4+5 numbers are < 366 --> male)
                 else if (dobDays <= '366') {
-                    nicno.innerHTML = "Your NIC number is: " + nic.value
-                    type.innerHTML = "This is an old NIC"
-                    age.innerHTML = "Age: " + (2021 - (19 + year))
-                    gender.innerHTML = "Gender: Male" 
-                    dob.innerHTML = "Date of Birth: " + year +  dobSelector(dobDays, year)              
+                    nicno.innerHTML = nic.value
+                    type.innerHTML = "Old NIC"
+                    age.innerHTML = (currentYear - (19 + year))
+                    gender.innerHTML = "Male" 
+                    dob.innerHTML = year +  dobSelector(dobDays, year)              
                 }
-                // (if 366 < 3+4+5 numbers are < 500 --> not a valid NIC)
                 else if ('366' < dobDays && dobDays < '500') {
-                    nicno.innerHTML = nic.value + " is not a valid NIC number"
+                    nicno.innerHTML = "Not a valid NIC number"
                 }
-                // (if 500 <= 3+4+5 numbers are <= 866 --> female)
                 else if ('500' <= dobDays && dobDays <= '866') {
-                    nicno.innerHTML = "Your NIC number is: " + nic.value
-                    type.innerHTML = "This is an old NIC"
-                    age.innerHTML = "Age: " + (2021 - (19 + year))
-                    gender.innerHTML = "Gender: Female" 
-                    dob.innerHTML = "Date of Birth: " + year +  dobSelector((dobDays - 500), year)
+                    nicno.innerHTML = nic.value
+                    type.innerHTML = "Old NIC"
+                    age.innerHTML = (currentYear - (19 + year))
+                    gender.innerHTML = "Female" 
+                    dob.innerHTML = year +  dobSelector((dobDays - 500), year)
                 }
-                // (if 866 < 3+4+5 numbers are < 999 --> female)
                 else if ('866' < dobDays && dobDays < '999') {
-                    nicno.innerHTML = nic.value + " is not a valid NIC number"
+                    nicno.innerHTML = "Not a valid NIC number"
                 }
         } else {
             nicno.innerHTML = nic.value + " has a invalid last character"
@@ -70,37 +66,33 @@ form.addEventListener('submit', (e) => {
 
         // find the gender and dob months and dates
         if (dobDays === '000') {
-            nicno.innerHTML = nic.value + " is not a valid NIC number"
+            nicno.innerHTML = "Not a valid NIC number"
         } 
-        // (if 3+4+5 numbers are < 366 --> male)
         else if (dobDays <= '366') {
-            nicno.innerHTML = "Your NIC number is: " + nic.value
-            type.innerHTML = "This is a new NIC"
-            age.innerHTML = "Age: " + (2021 - year)
-            gender.innerHTML = "Gender: Male" 
-            dob.innerHTML = "Date of Birth: " + year +  dobSelector(dobDays, year)
+            nicno.innerHTML = nic.value
+            type.innerHTML = "New NIC"
+            age.innerHTML = (currentYear - year)
+            gender.innerHTML = "Male" 
+            dob.innerHTML = year +  dobSelector(dobDays, year)
         }
-        // (if 366 < 3+4+5 numbers are < 500 --> not a valid NIC)
         else if ('366' < dobDays && dobDays < '500') {
-            nicno.innerHTML = nic.value + " is not a valid NIC number"
+            nicno.innerHTML = "Not a valid NIC number"
         }
-        // (if 500 <= 3+4+5 numbers are <= 866 --> female)
         else if ('500' <= dobDays && dobDays <= '866') {
-            nicno.innerHTML = "Your NIC number is: " + nic.value
-            type.innerHTML = "This is a new NIC"
-            age.innerHTML = "Age: " + (2021 - year)
-            gender.innerHTML = "Gender: Female" 
-            dob.innerHTML = "Date of Birth: " + year +  dobSelector((dobDays - 500), year)
+            nicno.innerHTML = nic.value
+            type.innerHTML = "New NIC"
+            age.innerHTML = (currentYear - year)
+            gender.innerHTML = "Female" 
+            dob.innerHTML = year +  dobSelector((dobDays - 500), year)
         }
-        // (if 866 < 3+4+5 numbers are < 999 --> female)
         else if ('866' < dobDays && dobDays < '999') {
-            nicno.innerHTML = nic.value + " is not a valid NIC number"
+            nicno.innerHTML = "Not a valid NIC number"
         }            
     } 
     else if (nic.value.length === 0) {
         nicno.innerHTML = "Please add your NIC number"
     } else {
-        nicno.innerHTML = nic.value + " is not a valid NIC number"
+        nicno.innerHTML = "Not a valid NIC number"
     }
     
     // if it is a leap year or not it does not matter. leap year and non leap year both can use this code.

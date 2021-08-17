@@ -29,28 +29,40 @@ h1 {
 #frame {
   align-items: center;
 }
-#NICno {
+#row {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 30%;
+}
+#text {
   text-align: center;
+  color: rgb(48, 46, 46);
+  margin-top: 20px;
+  margin-right: 5px;
+}
+#NICno {
   color: rgb(48, 46, 46);
   margin-top: 20px;
 }
 #type {
   text-align: center;
   color: rgb(48, 46, 46);
-  margin-top: 5px;
+  margin-top: 20px;
 }
 #DOB {
   text-align: center;
   color: rgb(48, 46, 46);
-  margin-top: 5px;
+  margin-top: 20px;
 }
 #age {
   text-align: center;
   color: rgb(48, 46, 46);
-  margin-top: 5px;
+  margin-top: 20px;
 }
 #gender {
   text-align: center;
   color: rgb(48, 46, 46);
-  margin-top: 5px;
+  margin-top: 20px;
 }
