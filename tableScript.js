@@ -14,20 +14,6 @@ $('#search-input').on('keyup', function(){
     buildTable(data)
 })
 
-$('#search-input-old').on('keyup', function(){
-    var value = $(this).val()
-    console.log("Value:", value)
-    var data = searchTableOldNIC(value, myArray)
-    buildTable(data)
-})
-
-$('#search-input-new').on('keyup', function(){
-    var value = $(this).val()
-    console.log("Value:", value)
-    var data = searchTableNewNIC(value, myArray)
-    buildTable(data)
-})
-
 buildTable(myArray)
 
 function searchTable(value, data) {
@@ -46,20 +32,6 @@ function searchTable(value, data) {
         }
     }
     return filteredData
-}
-
-function searchTableOldNIC(value, data) {
-    var filteredDataOldNIC = []
-    for (var i = 0; i < data.length; i++) {
-        var oldNIC = data[i].oldNIC
-        var newNIC = data[i].newNIC
-        if (oldNIC.includes(value)) {
-            filteredDataOldNIC.push(data[i])
-        } else if (newNIC.includes(value)) {
-            filteredDataOldNIC.push(data[i])
-        }
-    }
-    return filteredDataOldNIC
 }
 
 $('th').on('click', function(){
