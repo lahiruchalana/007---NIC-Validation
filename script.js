@@ -21,19 +21,21 @@ form.addEventListener('submit', (e) => {
         errorElement.innerText = messages.join(', ')
     }
     // identify old valid NIC 
-    if (nicNo.length === 10) {
-        if (lastCharacter == 'v' || 
-            lastCharacter == 'x' ) {
-                var year = 19 + nicNo.substr(0, 2)
-                var dobDays = nicNo.substr(2, 3)
-                type.innerHTML = "Old NIC"
-                getDetails(dobDays, year)
+    if (lastCharacter == 'v' || 
+        lastCharacter == 'x' ) {
+        if (nicNo.length >= 10) {
+            var nicNo = nicTrim.substring(0, (nicTrim.length - 1)).replace(/[^0-9]/g, "") + nicTrim.substring(nicTrim.length - 1)
+            var year = 19 + nicNo.substr(0, 2)
+            var dobDays = nicNo.substr(2, 3)
+            type.innerHTML = "Old NIC"
+            getDetails(dobDays, year)
         } else {
             notValid()
         }
     } 
     // identify new valid NIC
     else if (nicNo.length >= 12) {
+        // nicTrim includes letters so use another replace
         var nicNo = nicTrim.replace(/[^0-9]/g, "")
         if (nicNo.length === 12) {
             var year = nicNo.substr(0, 4)
@@ -46,12 +48,15 @@ form.addEventListener('submit', (e) => {
         } else {
             notValid()
         }
+    } else {
+        notValid()
     }
     // find the gender and dob months and dates 
     function getDetails(dobDays, year) {
         if (dobDays === '000') {
             notValid() 
         } 
+        // february 29 not available in some years ex - 97/98/99 (%4 === 1 | 2 | 3) only available in 96 - 2000 - 2004 (+4)
         else if ( (dobDays === '060' || dobDays === '560') &&  ((year % 4) === 1 || (year % 4) === 2 || (year % 4) === 3) ) {
             notValid() 
         }
