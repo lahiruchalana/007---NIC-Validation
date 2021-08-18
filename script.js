@@ -8,8 +8,9 @@ const age = document.getElementById('age')
 const gender = document.getElementById('gender')
 
 form.addEventListener('submit', (e) => {
-    var nicNo = nic.value.trim()
-    var lastCharacter = nicNo.substring(9).toLowerCase()
+    var nicTrim = nic.value.trim()
+    var nicNo = nicTrim.replace(/[^a-zA-Z0-9]/g, "")
+    var lastCharacter = nicNo.substring( nicNo.length - 1).toLowerCase()
     var currentYear = 2021
     let messages = []
 
@@ -19,7 +20,6 @@ form.addEventListener('submit', (e) => {
     if (messages.length > 0) {
         errorElement.innerText = messages.join(', ')
     }
-
     // identify old valid NIC 
     if (nicNo.length === 10) {
         if (lastCharacter == 'v' || 
@@ -32,25 +32,31 @@ form.addEventListener('submit', (e) => {
             notValid()
         }
     } 
-    // identify new valid NIC 
-    else if (nicNo.length === 12) {
-        var year = nicNo.substr(0, 4)
-        var dobDays = nicNo.substr(4, 3)
-        type.innerHTML = "New NIC"
-        getDetails(dobDays, year)
-    } 
-    else if (nicNo.length === 0) {
-        nicno.innerHTML = "Please add your NIC number"
-    } else {
-        notValid()
+    // identify new valid NIC
+    else if (nicNo.length >= 12) {
+        var nicNo = nicTrim.replace(/[^0-9]/g, "")
+        if (nicNo.length === 12) {
+            var year = nicNo.substr(0, 4)
+            var dobDays = nicNo.substr(4, 3)
+            type.innerHTML = "New NIC"
+            getDetails(dobDays, year)
+        } 
+        else if (nicNo.length === 0) {
+            nicno.innerHTML = "Please add your NIC number"
+        } else {
+            notValid()
+        }
     }
     // find the gender and dob months and dates 
     function getDetails(dobDays, year) {
         if (dobDays === '000') {
             notValid() 
         } 
+        else if ( (dobDays === '060' || dobDays === '560') &&  ((year % 4) === 1 || (year % 4) === 2 || (year % 4) === 3) ) {
+            notValid() 
+        }
         else if (dobDays <= '366') {
-            nicno.innerHTML = nic.value
+            nicno.innerHTML = nicNo
             age.innerHTML = (currentYear - (year))
             gender.innerHTML = "Male" 
             dob.innerHTML = year +  dobSelector(dobDays, year)              
@@ -59,7 +65,7 @@ form.addEventListener('submit', (e) => {
             notValid() 
         }
         else if ('500' <= dobDays && dobDays <= '866') {
-            nicno.innerHTML = nic.value
+            nicno.innerHTML = nicNo
             age.innerHTML = (currentYear - (year))
             gender.innerHTML = "Female" 
             dob.innerHTML = year +  dobSelector((dobDays - 500), year)
@@ -99,7 +105,6 @@ form.addEventListener('submit', (e) => {
         }
         return setDOB 
     }
-
     function notValid() {
         nicno.innerHTML = "Not a valid NIC number"
         age.innerHTML = "N/A" 
