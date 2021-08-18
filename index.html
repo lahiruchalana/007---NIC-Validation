@@ -11,14 +11,16 @@
 </head>
 <body>
     <h1 class="h1" style="margin-top: 50px;">NIC Validation</h1>
-    <input type="button" class="btn btn-outline-success" onClick="location.href='table.html'"
+    <input type="button" class="btn btn-outline-success" onClick="location.href='./table/table.html'"
         value='Find Users By NIC' style="margin-top: -80px; margin-left: 80%;"> 
+    <input type="button" class="btn btn-outline-danger" onClick="location.href='./test/test.html'"
+        value='Test NIC Numbers' style="margin-top: -20px; margin-left: 80%;"> 
     <form id="form" action="/" method="GET">
         <div>
             <div style="max-width: 400px; margin-left: auto; margin-right: auto;" class="input-group mb-3">
                 <input id="NIC" name="NIC" type="string" class="form-control" placeholder="Enter NIC Number" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                    <button style="margin-top: -0px;" class="btn btn-outline-secondary" id="button" type="submit">Show NIC Info</button>
+                    <button style="margin-top: -0px;" class="btn btn-outline-info" id="button" type="submit">Show NIC Info</button>
                 </div>
             </div>
         </div>
