@@ -20,24 +20,35 @@ form.addEventListener('submit', (e) => {
     if (messages.length > 0) {
         errorElement.innerText = messages.join(', ')
     }
-    // identify old valid NIC 
+    // identify old valid NIC (ex NIC - 971811102v)
     if (lastCharacter == 'v' || 
         lastCharacter == 'x' ) {
         if (nicNo.length >= 10) {
             var nicNo = nicTrim.substring(0, (nicTrim.length - 1)).replace(/[^0-9]/g, "") + nicTrim.substring(nicTrim.length - 1)
-            var year = 19 + nicNo.substr(0, 2)
-            var dobDays = nicNo.substr(2, 3)
-            type.innerHTML = "Old NIC"
-            getDetails(dobDays, year)
+            if (nicNo.length === 10) {
+                var year = 19 + nicNo.substr(0, 2)
+                var dobDays = nicNo.substr(2, 3)
+                type.innerHTML = "Old NIC"
+                getDetails(dobDays, year)
+            } else {
+                notValid()
+            }
         } else {
             notValid()
         }
     } 
-    // identify new valid NIC
-    else if (nicNo.length >= 12) {
-        // nicTrim includes letters so use another replace
+    else if (nicNo.length >= 9) {
+        // nicTrim includes letters so use replace() method
         var nicNo = nicTrim.replace(/[^0-9]/g, "")
-        if (nicNo.length === 12) {
+        // identify old valid NIC but without "v" or "x" (ex NIC - 971811102)
+        if (nicNo.length === 9) {
+            var year = 19 + nicNo.substr(0, 2)
+            var dobDays = nicNo.substr(2, 3)
+            type.innerHTML = "Old NIC"
+            getDetails(dobDays, year)
+        }
+        // identify new valid NIC (ex NIC - 199718101102)
+        else if (nicNo.length === 12) {
             var year = nicNo.substr(0, 4)
             var dobDays = nicNo.substr(4, 3)
             type.innerHTML = "New NIC"
@@ -79,7 +90,7 @@ form.addEventListener('submit', (e) => {
             notValid()
         }
     }
-    // if it is a leap year or not it does not matter. leap year and non leap year both can use this code.
+    // if it is a leap year or not it does not matter. leap year and non leap year both can use this code. (feb 29 = 060 / 560)
     function dobSelector(days, year) {
         if ((year % 4) === 0 || (year % 4) === 1 || (year % 4) === 2 || (year % 4) === 3) {
             if (days <= 31) {
