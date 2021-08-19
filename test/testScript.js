@@ -2,7 +2,7 @@ const form = document.getElementById('form')
 
 
 form.addEventListener('submit', (e) => {
-    for (let i = 1; i < 6; i++) {
+    for (let i = 1; i < 13; i++) {
         const nic = document.getElementById("NIC" + i)
         const errorElement = document.getElementById("error" + i)
         const nicno = document.getElementById("NICno" + i)

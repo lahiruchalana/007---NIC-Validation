@@ -12,154 +12,159 @@
 <body>
     <div id="frame" style="display: flex; flex-direction: column;">
         <div class="row">
-            <h1 style="margin-top: 10px; margin-right: 30px;" >Search Users</h1>            
+            <h1 style="margin-top: 20px; margin-right: 30px; margin-bottom: 20px;" >Testing NIC</h1>
+            <input style="margin-top: 20px; margin-left: 800px; width: 200px; height: 50px;" type="button" class="btn btn-outline-secondary" 
+            id="home" onClick="location.href='../index.html'" value='Home'>             
         </div>
-            <div>
-                <div style="display: flex; flex-direction: column; width: 1000px; margin-left: auto; margin-right: auto;" class="input-group mb-3">
-                    <form id="form" action="/test/test.html" method="GET">
-                        <div class="form-group">
-                            <label for="formGroupExampleInput">Example label</label>
-                            <input type="string" class="form-control" id="NIC1" placeholder="Example input">
+            <div style="display: flex; flex-direction: row;">
+                <div style="display: flex; flex-direction: column; width: 800px; margin-left: auto; margin-right: auto;" class="input-group mb-3">
+                    <form id="form" action="/test/test.html" method="GET" style="width: 500px;">
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput">Enter NIC</label>
+                            <input type="string" class="form-control" id="NIC1" value="971811102v">
                         </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Another label</label>
-                            <input type="string" class="form-control" id="NIC2" placeholder="Another input">
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">Enter NIC</label>
+                            <input type="string" class="form-control" id="NIC2" value="971811102 v">
                         </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Another label</label>
-                            <input type="string" class="form-control" id="NIC3" placeholder="Another input">
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">Enter NIC</label>
+                            <input type="string" class="form-control" id="NIC3" value="971811102v     ">
                         </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Another label</label>
-                            <input type="string" class="form-control" id="NIC4" placeholder="Another input">
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">Enter NIC</label>
+                            <input type="string" class="form-control" id="NIC4" value="971gh811 0 @#2v">
                         </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Another label</label>
-                            <input type="string" class="form-control" id="NIC5" placeholder="Another input">
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">Enter NIC</label>
+                            <input type="string" class="form-control" id="NIC5" value="971811102">
                         </div>
-                        <button type="submit" class="btn btn-outline-danger" value='Test NIC Numbers' style="margin-top: 20px; margin-right: 5%; width: 200px;"></button> 
+                        <input type="submit" class="btn btn-outline-danger" value='Test NIC Numbers' style="margin-top: 20px; margin-right: 5%; width: 200px;"></input> 
                     </form>
                 </div>
-                <div style="display: flex; flex-direction: column; width: 1000px; margin-left: auto; margin-right: auto;" class="input-group mb-3">
+                <div style="display: flex; flex-direction: column; width: 800px; margin-left: 0px; " class="input-group mb-3">
                     <div id="frame">
-                        <div id="error1"></div>
-                        <div id="row">
-                            <div id="text">Your NIC number is: </div>
+                        <div class="row" id="error1" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is:  </div>
                             <div id="NICno1"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">NIC Type: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
                             <div id="type1"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Date of Birth: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
                             <div id="DOB1"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Age: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
                             <div id="age1"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Gender: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
                             <div id="gender1"></div>   
                         </div>
                     </div>
+                    <div id="line"></div>
                     <div id="frame">
-                        <div id="error2"></div>
-                        <div id="row">
-                            <div id="text">Your NIC number is: </div>
+                        <div class="row" id="error2" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
                             <div id="NICno2"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">NIC Type: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
                             <div id="type2"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Date of Birth: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
                             <div id="DOB2"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Age: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
                             <div id="age2"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Gender: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
                             <div id="gender2"></div>   
                         </div>
                     </div>
+                    <div id="line"></div>
                     <div id="frame">
-                        <div id="error3"></div>
-                        <div id="row">
-                            <div id="text">Your NIC number is: </div>
+                        <div class="row" id="error3" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
                             <div id="NICno3"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">NIC Type: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
                             <div id="type3"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Date of Birth: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
                             <div id="DOB3"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Age: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
                             <div id="age3"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Gender: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
                             <div id="gender3"></div>   
                         </div>
                     </div>
+                    <div id="line"></div>
                     <div id="frame">
-                        <div id="error4"></div>
-                        <div id="row">
-                            <div id="text">Your NIC number is: </div>
+                        <div class="row" id="error4" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
                             <div id="NICno4"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">NIC Type: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
                             <div id="type4"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Date of Birth: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
                             <div id="DOB4"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Age: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
                             <div id="age4"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Gender: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
                             <div id="gender4"></div>   
                         </div>
                     </div>
+                    <div id="line"></div>
                     <div id="frame">
-                        <div id="error5"></div>
-                        <div id="row">
-                            <div id="text">Your NIC number is: </div>
+                        <div class="row" id="error5" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
                             <div id="NICno5"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">NIC Type: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
                             <div id="type5"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Date of Birth: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
                             <div id="DOB5"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Age: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
                             <div id="age5"></div>
                         </div>
-                        <div id="row">
-                            <div id="text">Gender: </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
                             <div id="gender5"></div>   
                         </div>
                     </div>
+                    <div id="line"></div>
                 </div>
             </div>
-        <input style="margin-top: 20px; width: 200px;" type="button" class="btn btn-outline-secondary" 
-        id="home" onClick="location.href='../index.html'" value='Home'> 
     </div>
 </body>
 </html>
