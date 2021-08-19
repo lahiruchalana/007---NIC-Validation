@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NIC_Test | Users</title>
-        <script defer src="tableScript.js"></script>
+        <script defer src="testScript.js"></script>
         <link rel="stylesheet" href="testStyles.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -14,37 +14,152 @@
         <div class="row">
             <h1 style="margin-top: 10px; margin-right: 30px;" >Search Users</h1>            
         </div>
-        <form id="form" action="/" method="GET">
             <div>
                 <div style="display: flex; flex-direction: column; width: 1000px; margin-left: auto; margin-right: auto;" class="input-group mb-3">
-                    <form>
+                    <form id="form" action="/test/test.html" method="GET">
                         <div class="form-group">
                             <label for="formGroupExampleInput">Example label</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                            <input type="string" class="form-control" id="NIC1" placeholder="Example input">
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Another label</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                            <input type="string" class="form-control" id="NIC2" placeholder="Another input">
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Another label</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                            <input type="string" class="form-control" id="NIC3" placeholder="Another input">
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Another label</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                            <input type="string" class="form-control" id="NIC4" placeholder="Another input">
                         </div>
                         <div class="form-group">
                             <label for="formGroupExampleInput2">Another label</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                            <input type="string" class="form-control" id="NIC5" placeholder="Another input">
                         </div>
+                        <button type="submit" class="btn btn-outline-danger" value='Test NIC Numbers' style="margin-top: 20px; margin-right: 5%; width: 200px;"></button> 
                     </form>
-                    <input type="button" class="btn btn-outline-danger" onClick="location.href='./test/test.html'"
-                    value='Test NIC Numbers' style="margin-top: 20px; margin-right: 5%; width: 200px;"> 
+                </div>
+                <div style="display: flex; flex-direction: column; width: 1000px; margin-left: auto; margin-right: auto;" class="input-group mb-3">
+                    <div id="frame">
+                        <div id="error1"></div>
+                        <div id="row">
+                            <div id="text">Your NIC number is: </div>
+                            <div id="NICno1"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">NIC Type: </div>
+                            <div id="type1"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Date of Birth: </div>
+                            <div id="DOB1"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Age: </div>
+                            <div id="age1"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Gender: </div>
+                            <div id="gender1"></div>   
+                        </div>
+                    </div>
+                    <div id="frame">
+                        <div id="error2"></div>
+                        <div id="row">
+                            <div id="text">Your NIC number is: </div>
+                            <div id="NICno2"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">NIC Type: </div>
+                            <div id="type2"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Date of Birth: </div>
+                            <div id="DOB2"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Age: </div>
+                            <div id="age2"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Gender: </div>
+                            <div id="gender2"></div>   
+                        </div>
+                    </div>
+                    <div id="frame">
+                        <div id="error3"></div>
+                        <div id="row">
+                            <div id="text">Your NIC number is: </div>
+                            <div id="NICno3"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">NIC Type: </div>
+                            <div id="type3"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Date of Birth: </div>
+                            <div id="DOB3"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Age: </div>
+                            <div id="age3"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Gender: </div>
+                            <div id="gender3"></div>   
+                        </div>
+                    </div>
+                    <div id="frame">
+                        <div id="error4"></div>
+                        <div id="row">
+                            <div id="text">Your NIC number is: </div>
+                            <div id="NICno4"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">NIC Type: </div>
+                            <div id="type4"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Date of Birth: </div>
+                            <div id="DOB4"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Age: </div>
+                            <div id="age4"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Gender: </div>
+                            <div id="gender4"></div>   
+                        </div>
+                    </div>
+                    <div id="frame">
+                        <div id="error5"></div>
+                        <div id="row">
+                            <div id="text">Your NIC number is: </div>
+                            <div id="NICno5"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">NIC Type: </div>
+                            <div id="type5"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Date of Birth: </div>
+                            <div id="DOB5"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Age: </div>
+                            <div id="age5"></div>
+                        </div>
+                        <div id="row">
+                            <div id="text">Gender: </div>
+                            <div id="gender5"></div>   
+                        </div>
+                    </div>
                 </div>
             </div>
-        </form>
-        <input style="margin-top: 20px; width: 200px;" type="button" class="btn btn-outline-secondary" id="home" onClick="location.href='../index.html'" value='Home'> 
+        <input style="margin-top: 20px; width: 200px;" type="button" class="btn btn-outline-secondary" 
+        id="home" onClick="location.href='../index.html'" value='Home'> 
     </div>
 </body>
 </html>
