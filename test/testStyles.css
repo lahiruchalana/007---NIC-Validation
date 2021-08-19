@@ -18,7 +18,7 @@ body {
 }
 
 #form-group {
-  margin-bottom: 80px;
+  margin-bottom: 75px;
 }
 
 #line {
@@ -28,4 +28,8 @@ body {
   margin-left: 100px;
   padding: 1px;
   background-color: black;
+}
+
+#text {
+  margin-right: 5px;
 }

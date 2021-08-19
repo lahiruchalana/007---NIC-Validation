@@ -20,24 +20,68 @@
                 <div style="display: flex; flex-direction: column; width: 800px; margin-left: auto; margin-right: auto;" class="input-group mb-3">
                     <form id="form" action="/test/test.html" method="GET" style="width: 500px;">
                         <div id="form-group" class="form-group">
-                            <label for="formGroupExampleInput">Enter NIC</label>
-                            <input type="string" class="form-control" id="NIC1" value="971811102v">
+                            <label for="formGroupExampleInput">Valid Old NIC</label>
+                            <input type="string" class="form-control" id="NIC1" value="976811102v">
                         </div>
                         <div id="form-group" class="form-group">
-                            <label for="formGroupExampleInput2">Enter NIC</label>
+                            <label for="formGroupExampleInput2">Space After Numbers</label>
                             <input type="string" class="form-control" id="NIC2" value="971811102 v">
                         </div>
                         <div id="form-group" class="form-group">
-                            <label for="formGroupExampleInput2">Enter NIC</label>
-                            <input type="string" class="form-control" id="NIC3" value="971811102v     ">
+                            <label for="formGroupExampleInput2">Trim</label>
+                            <input type="string" class="form-control" id="NIC3" value="        971811102v     ">
                         </div>
                         <div id="form-group" class="form-group">
-                            <label for="formGroupExampleInput2">Enter NIC</label>
-                            <input type="string" class="form-control" id="NIC4" value="971gh811 0 @#2v">
+                            <label for="formGroupExampleInput2">Inside Characters</label>
+                            <input type="string" class="form-control" id="NIC4" value="971gh8111 0 @#2v">
                         </div>
                         <div id="form-group" class="form-group">
-                            <label for="formGroupExampleInput2">Enter NIC</label>
+                            <label for="formGroupExampleInput2">WIthout V/X</label>
                             <input type="string" class="form-control" id="NIC5" value="971811102">
+                        </div>
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">DOB Days Error</label>
+                            <input type="string" class="form-control" id="NIC6" value="974811102v">
+                        </div>
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">Leap Year Error</label>
+                            <input type="string" class="form-control" id="NIC7" value="970601102">
+                        </div>
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">Enter Less Strings</label>
+                            <input type="string" class="form-control" id="NIC8" value="971sc">
+                        </div>
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">Ignore Letters in First 9 Numbers</label>
+                            <input type="string" class="form-control" id="NIC9" value="971h81s@$1102v">
+                        </div>
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">Block Letter V/X</label>
+                            <input type="string" class="form-control" id="NIC10" value="971811102V">
+                        </div>
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">New NIC</label>
+                            <input type="string" class="form-control" id="NIC11" value="200135102548">
+                        </div>
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">Trim</label>
+                            <input type="string" class="form-control" id="NIC12" value="   200135102548      ">
+                        </div>
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">Inside Characters</label>
+                            <input type="string" class="form-control" id="NIC13" value="20 013sca510@#25%4 8">
+                        </div>
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">DOB Days Error</label>
+                            <input type="string" class="form-control" id="NIC14" value="200195102548">
+                        </div>
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">Leap Year Error</label>
+                            <input type="string" class="form-control" id="NIC15" value="200156002548">
+                        </div>
+                        <div id="form-group" class="form-group">
+                            <label for="formGroupExampleInput2">Ignore Letters in Numbers</label>
+                            <input type="string" class="form-control" id="NIC16" value="2001ed35102Fs548">
                         </div>
                         <input type="submit" class="btn btn-outline-danger" value='Test NIC Numbers' style="margin-top: 20px; margin-right: 5%; width: 200px;"></input> 
                     </form>
@@ -160,6 +204,270 @@
                         <div class="row">
                             <div id="text" style="font-weight: 700;">Gender: </div>
                             <div id="gender5"></div>   
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div id="frame">
+                        <div class="row" id="error6" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
+                            <div id="NICno6"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
+                            <div id="type6"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
+                            <div id="DOB6"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
+                            <div id="age6"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
+                            <div id="gender6"></div>   
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div id="frame">
+                        <div class="row" id="error7" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
+                            <div id="NICno7"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
+                            <div id="type7"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
+                            <div id="DOB7"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
+                            <div id="age7"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
+                            <div id="gender7"></div>   
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div id="frame">
+                        <div class="row" id="error8" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
+                            <div id="NICno8"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
+                            <div id="type8"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
+                            <div id="DOB8"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
+                            <div id="age8"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
+                            <div id="gender8"></div>   
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div id="frame">
+                        <div class="row" id="error9" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
+                            <div id="NICno9"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
+                            <div id="type9"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
+                            <div id="DOB9"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
+                            <div id="age9"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
+                            <div id="gender9"></div>   
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div id="frame">
+                        <div class="row" id="error10" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
+                            <div id="NICno10"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
+                            <div id="type10"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
+                            <div id="DOB10"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
+                            <div id="age10"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
+                            <div id="gender10"></div>   
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div id="frame">
+                        <div class="row" id="error11" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
+                            <div id="NICno11"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
+                            <div id="type11"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
+                            <div id="DOB11"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
+                            <div id="age11"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
+                            <div id="gender11"></div>   
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div id="frame">
+                        <div class="row" id="error12" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
+                            <div id="NICno12"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
+                            <div id="type12"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
+                            <div id="DOB12"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
+                            <div id="age12"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
+                            <div id="gender12"></div>   
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div id="frame">
+                        <div class="row" id="error13" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
+                            <div id="NICno13"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
+                            <div id="type13"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
+                            <div id="DOB13"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
+                            <div id="age13"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
+                            <div id="gender13"></div>   
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div id="frame">
+                        <div class="row" id="error14" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
+                            <div id="NICno14"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
+                            <div id="type14"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
+                            <div id="DOB14"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
+                            <div id="age14"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
+                            <div id="gender14"></div>   
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div id="frame">
+                        <div class="row" id="error15" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
+                            <div id="NICno15"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
+                            <div id="type15"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
+                            <div id="DOB15"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
+                            <div id="age15"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
+                            <div id="gender15"></div>   
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <div id="frame">
+                        <div class="row" id="error16" style="color: red;"></div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Your NIC number is: </div>
+                            <div id="NICno16"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">NIC Type: </div>
+                            <div id="type16"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Date of Birth: </div>
+                            <div id="DOB16"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Age: </div>
+                            <div id="age16"></div>
+                        </div>
+                        <div class="row">
+                            <div id="text" style="font-weight: 700;">Gender: </div>
+                            <div id="gender16"></div>   
                         </div>
                     </div>
                     <div id="line"></div>

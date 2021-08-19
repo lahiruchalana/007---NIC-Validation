@@ -2,7 +2,7 @@ const form = document.getElementById('form')
 
 
 form.addEventListener('submit', (e) => {
-    for (let i = 1; i < 13; i++) {
+    for (let i = 1; i < 17; i++) {
         const nic = document.getElementById("NIC" + i)
         const errorElement = document.getElementById("error" + i)
         const nicno = document.getElementById("NICno" + i)
@@ -19,7 +19,7 @@ form.addEventListener('submit', (e) => {
         let messages = []
 
         if (nicNo === '' || nicNo == null) {
-            messages.push('NIC number is required')
+            messages.push(' NIC number is required')
         }
         if (messages.length > 0) {
             errorElement.innerText = messages.join(', ')
@@ -32,7 +32,7 @@ form.addEventListener('submit', (e) => {
                 if (nicNo.length === 10) {
                     var year = 19 + nicNo.substr(0, 2)
                     var dobDays = nicNo.substr(2, 3)
-                    type.innerHTML = "Old NIC"
+                    type.innerHTML = " Old NIC"
                     getDetails(dobDays, year)
                 } else {
                     notValid()
@@ -48,18 +48,18 @@ form.addEventListener('submit', (e) => {
             if (nicNo.length === 9) {
                 var year = 19 + nicNo.substr(0, 2)
                 var dobDays = nicNo.substr(2, 3)
-                type.innerHTML = "Old NIC"
+                type.innerHTML = " Old NIC"
                 getDetails(dobDays, year)
             }
             // identify new valid NIC (ex NIC - 199718101102)
             else if (nicNo.length === 12) {
                 var year = nicNo.substr(0, 4)
                 var dobDays = nicNo.substr(4, 3)
-                type.innerHTML = "New NIC"
+                type.innerHTML = " New NIC"
                 getDetails(dobDays, year)
             } 
             else if (nicNo.length === 0) {
-                nicno.innerHTML = "Please add your NIC number"
+                nicno.innerHTML = " Please add your NIC number"
             } else {
                 notValid()
             }
@@ -78,7 +78,7 @@ form.addEventListener('submit', (e) => {
             else if (dobDays <= '366') {
                 nicno.innerHTML = nicNo
                 age.innerHTML = (currentYear - (year))
-                gender.innerHTML = "Male" 
+                gender.innerHTML = " Male" 
                 dob.innerHTML = year +  dobSelector(dobDays, year)              
             }
             else if ('366' < dobDays && dobDays < '500') {
@@ -87,7 +87,7 @@ form.addEventListener('submit', (e) => {
             else if ('500' <= dobDays && dobDays <= '866') {
                 nicno.innerHTML = nicNo
                 age.innerHTML = (currentYear - (year))
-                gender.innerHTML = "Female" 
+                gender.innerHTML = " Female" 
                 dob.innerHTML = year +  dobSelector((dobDays - 500), year)
             }
             else if ('866' < dobDays && dobDays < '999') {
@@ -126,10 +126,10 @@ form.addEventListener('submit', (e) => {
             return setDOB 
         }
         function notValid() {
-            nicno.innerHTML = "Not a valid NIC number"
-            age.innerHTML = "N/A" 
-            gender.innerHTML = "N/A" 
-            dob.innerHTML = "N/A" 
+            nicno.innerHTML = " Not a valid NIC number"
+            age.innerHTML = " N/A" 
+            gender.innerHTML = " N/A" 
+            dob.innerHTML = " N/A" 
         }
     } 
     e.preventDefault()
