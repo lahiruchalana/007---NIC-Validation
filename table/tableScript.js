@@ -1,3 +1,6 @@
+const attention = document.getElementById("attention")
+const referralButton = document.getElementById("referralButton")
+
 var myArray = [
     {'name':'Lahiru', 'NIC':'971811102v', 'referralNIC':'', 'age':'30', 'birthdate':'11/10/1989'},
     {'name':'Isuru', 'NIC':'199528108988', 'referralNIC':'952818988v', 'age':'32', 'birthdate':'10/1/1989'},
@@ -41,6 +44,8 @@ function searchTable(value, data) {
             if (birthYearDOB.includes(valueBirthYearDOB)) {
                 if (serialCode.includes(valueSerialCode)) {
                     filteredData.push(data[i])
+                    attention.innerHTML = "Your Old NIC " + data[i].NIC + " is Available"
+                    referralButton.innerHTML = "Update Your Old NIC to New NIC"
                 }
             } else if (NIC.includes(value)) {
                 filteredData.push(data[i])

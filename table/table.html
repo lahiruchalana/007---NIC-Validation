@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <div id="frame">
+    <div id="frame" class="column">
         <div class="row">
             <h1 style="margin-top: 10px; margin-right: 30px;" >Search Users</h1>            
             <div class="col" style="margin-bottom: 20px;">
@@ -26,12 +26,14 @@
                 <th  data-colname="age" data-order="desc">NIC &#9650</th>
                 <th  data-colname="age" data-order="desc">Referral NIC &#9650</th>
                 <th  data-colname="age" data-order="desc">Age &#9650</th>
-                <th  data-colname="birthdate" >Birthday &#9650</th>
+                <th  data-colname="birthdate" data-order="desc">Birthday &#9650</th>
             </tr>
             <tbody id="myTable">
                 
             </tbody>
         </table>
+        <button id="attention" type="button" class="btn btn-warning" ></button>
+        <button id="referralButton" type="button" class="btn btn-success"></button>
         <input type="button" class="btn btn-outline-secondary" id="home" onClick="location.href='../index.html'"
         value='Home'> 
     </div>

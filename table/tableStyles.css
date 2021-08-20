@@ -18,3 +18,27 @@ th {
   margin-left: auto;
   margin-right: auto;
 }
+
+#attention {
+  margin-top: 0px;
+  width: 100%;
+  font-weight: 700;
+  align-items: center;
+  font-size: 14px;
+  color: rgb(80, 80, 80);
+}
+
+#referralButton {
+  margin-top: 30px;
+  margin-left: 39%;
+  font-weight: 700;
+  align-items: center;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+}
+
+#home {
+  margin-top: 50px;
+  margin-left: 0px;
+  margin-right: 40%;
+}
