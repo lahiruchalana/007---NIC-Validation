@@ -19,23 +19,25 @@
                     <input id="search-input" class="form-control" type="text" placeholder="Search by User NIC or Name">
                 </div>
             </div>
+            <input type="button" class="btn btn-outline-secondary" id="home" onClick="location.href='../index.html'"
+            value='Home'> 
         </div>
         <table class="table table-striped">
             <tr  class="bg-info">
-                <th  class="bg-info" data-colname="name" data-order="desc">Name &#9650</th>
-                <th  data-colname="age" data-order="desc">NIC &#9650</th>
-                <th  data-colname="age" data-order="desc">Referral NIC &#9650</th>
-                <th  data-colname="age" data-order="desc">Age &#9650</th>
-                <th  data-colname="birthdate" data-order="desc">Birthday &#9650</th>
+                <th  class="bg-info" data-colname="name" data-order="desc">Name</th>
+                <th  data-colname="age" data-order="desc">NIC</th>
+                <th  data-colname="age" data-order="desc">Referral NIC</th>
+                <th  data-colname="age" data-order="desc">Age</th>
+                <th  data-colname="birthdate" data-order="desc">Birthday</th>
             </tr>
             <tbody id="myTable">
                 
             </tbody>
         </table>
-        <button id="attention" type="button" class="btn btn-warning" ></button>
-        <button id="referralButton" type="button" class="btn btn-success"></button>
-        <input type="button" class="btn btn-outline-secondary" id="home" onClick="location.href='../index.html'"
-        value='Home'> 
+        <div class="colomn">
+            <button id="attention" type="button" class="btn btn-warning" ></button>
+            <button id="referralButton" type="button" class="btn btn-success"></button>
+        </div>
     </div>
 </body>
 </html>

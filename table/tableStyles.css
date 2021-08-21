@@ -14,9 +14,9 @@ th {
 }
 
 #home {
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
+  max-height: 60px;
+  width: 100px;
+  margin-top: 10px;
 }
 
 #attention {
@@ -30,15 +30,9 @@ th {
 
 #referralButton {
   margin-top: 30px;
-  margin-left: 39%;
+  margin-left: 0%;
   font-weight: 700;
   align-items: center;
   font-size: 18px;
   color: rgb(255, 255, 255);
-}
-
-#home {
-  margin-top: 50px;
-  margin-left: 0px;
-  margin-right: 40%;
 }
