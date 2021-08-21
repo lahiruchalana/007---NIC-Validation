@@ -13,7 +13,7 @@ form.addEventListener('submit', (e) => {
     var lastCharacter = nicNo.substring( nicNo.length - 1).toLowerCase()
     var currentYear = 2021
     let messages = []
-
+    // error for required
     if (nicNo === '' || nicNo == null) {
         messages.push('NIC number is required')
     }
